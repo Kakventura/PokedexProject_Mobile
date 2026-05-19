@@ -6,6 +6,7 @@ import {
     Image,
     FlatList,
 } from 'react-native';
+import PokemonDetail from '@/integration/pokeconstant';
 import { Button } from '@/components/button';
 import { useAuth } from '@/context/AuthContext';
 import { DASHBOARD_POKEMONS, Pokemon } from '@/data/pokemons';
@@ -63,8 +64,11 @@ export default function Dashboard() {
                 <Button title="Sair" onPress={signOut} style={styles.logoutBtn} />
             </View>
 
+            <PokemonDetail />
+
             <Text style={styles.sectionTitle}>Seus Pokémons</Text>
 
+Usar o UseEffect
             <FlatList
                 data={DASHBOARD_POKEMONS}
                 keyExtractor={(item) => item.id}
